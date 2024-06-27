@@ -37,3 +37,17 @@ update product_master set costprice=950 where description="Trousers";
 change the city of salesman to pune
 
 update  SALESMAN_MASTER set city = "pune";
+
+delet one line data
+
+delete from CLIENT_MASTER where clientno = "C00005";
+
+delete all data 
+
+delete from client_master;
+
+drop the table and database
+
+drop table client_master;
+
+drop database NodeJS;
