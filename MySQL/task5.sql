@@ -87,12 +87,14 @@ insert into SALESMAN_MASTER values
 ("S00003", "Raj" , "P-7" , "Bandra" , "Mumbai" , 400032 , "Maharashtra" , 3000 , 200 , 100 , "Good" ),
 ("S00004", "Ashish" , "A/5" , "Juhu" , "Mumbai" , 400044 , "Maharashtra" , 3500 , 200 , 150 , "Good" );
 
+-- *************table-4********* 
 
 create table sales_order(
-	orderno varchar(6),
+	orderno varchar(6) primary key,
+    clientno varchar(20),
 	 foreign key(clientno) references client_master1(clientno),
      orderdate date not null,
-	delyaddr varchar(25),
+    salesmanno varchar(20),
 	foreign key(salesmanno) references salesman_master(salesmanno),
     delytype char(1),
     billyn char(1),
@@ -101,3 +103,4 @@ create table sales_order(
 );
 
 desc sales_order;
+
