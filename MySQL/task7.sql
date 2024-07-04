@@ -1,22 +1,75 @@
-use classicmodels;
 
-select abs(-23.054);
+--                                                          Numeric Functions
 
-select mod(4,2);
+select abs(-243.5);
 
-select power(2,2);
+select acos(-0.8);
 
-select round(2.5654,2);
+select mod(3,4);
 
-select truncate(32.65764854678,5);
+select power(5,2);
 
-select sin(2);
+select round(10.88765432987654,6);
 
-select cos(5);
+select truncate(10.98765434567890,1);
 
-select tan(9);
+select sin(20);
 
-select asin(1);
+select cos(40);
 
-select acos(-1);
+select tan(15);
 
+select asin(0.78);
+
+select acos(0.80);
+
+select atan(96);
+
+select sqrt(20);
+
+select exp(15);
+
+select ln(67);
+
+select log(2,4);
+
+select ceil(15);
+
+select floor(5);
+
+select sign(-10);
+
+
+
+--                                                 String Functions
+
+select lower("SKILLQODE"); 
+
+select upper("SKILLQODE"); 
+
+select concat("skill" , "qode");
+
+select lpad("skill", 2 ,"qode");
+
+select rpad("skill", 20 ,"qode");
+
+select ltrim('     SQL Tutorial     ');
+
+select rtrim("   SKILLQODE     ");
+
+select replace("skillqode" , "skill" , "vrunda");
+
+select substr("vrunda" , 4 , 2);
+
+select length("skillqode");
+
+select instr("skillqode" , "3");
+
+
+
+
+--                                  Date and Time Functions 
+
+select last_day("2024-07-04");
+
+select sysdate();

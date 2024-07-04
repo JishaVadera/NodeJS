@@ -23,6 +23,10 @@ where cm.name = 'Ivan bayross';
 
 
 -- 2.Find out the products and their quanities that will have to be delivered in the current month.
+select sod.qtyordered , pm.description from sales_order_details1 sod 
+inner join product_master pm on sod.productno = pm.productno
+inner join sales_order so on sod.orderno = so.orderno
+WHERE YEAR(so.dyddate) = YEAR(CURRENT_DATE()) && MONTH(so.orderdate) = MONTH(CURRENT_DATE());
 
 
 -- 3.List the productNo and decription of constantly sold(i.e, rapidly moving) produts.
@@ -39,6 +43,12 @@ inner join sales_order_details1 sod on  so.orderNo = sod.orderno
 inner join product_master pm on  pm.description = 'Trousers';
 
 -- 5.List the products and orders from customers who have ordered less than 5 unit of 'Pull Overs'.
+
+SELECT client_master1.Name, sales_order.Orderno, Product_master.description, sales_Order_Details1.qtyordered FROM client_master1
+inner JOIN sales_order ON client_master1.clientno = sales_Order.clientno
+inner JOIN sales_Order_Details1 ON sales_Order.Orderno = sales_Order_Details1.Orderno
+inner JOIN Product_master ON sales_Order_Details1.Productno = Product_master.Productno
+WHERE Product_master.description = 'Pull Overs' && sales_Order_Details1.qtyordered < 5;
 
 -- 6.find the products and their quantities for the orders placed by 'Ivan Bayross' and 'Mamta muzumdar'.
 select sod.orderno,cm.name , pm.qtyonhand , sod.qtyordered
@@ -64,4 +74,10 @@ inner join product_master pm on sod.productno = pm.productno
 inner join sales_order so on sod.orderno = so.orderno
 inner join client_master1 cm on cm.clientno = so.clientno where  cm.clientno IN('C0001','C0002');
 
-  
+select sod.orderno,cm.name ,cm.clientno, pm.qtyonhand , sod.qtyordered from  sales_order_details1 sod
+inner join sales_order so on sod.orderNo = so.orderNo
+inner join product_master pm on sod.productNo = pm.productNo
+inner join client_master1 cm on  so.clientno = cm.clientno
+where cm.clientno IN('C00001','C00002');
+
+select * from client_master1;
