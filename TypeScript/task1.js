@@ -1,0 +1,13 @@
+var a = 101;
+var b = 10;
+// let c : number[] = 101;
+var d = [112];
+var e = [200];
+var f = "Zeel";
+var g = true;
+console.log(a);
+console.log(b);
+console.log(d);
+console.log(e);
+console.log(f);
+console.log(g);

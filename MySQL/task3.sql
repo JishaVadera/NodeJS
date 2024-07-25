@@ -26,7 +26,7 @@ between and not between
 
 limit and skip
 
--- select * from customers limit 10, 30;
+select * from customers limit 10, 30;
 
 distinct query
 
